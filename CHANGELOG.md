@@ -8,6 +8,13 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ## [Unreleased]
 
+## [1.13.3] — 2026-11-16
+
+### Changed
+- Festa Major de Sant Andreu de Palomar in Coming up: the official dates,
+  November 27 to December 8, 2026, from the Comissió de Festes poster. The card
+  now links to the Comissió's website.
+
 ## [1.13.2] — 2026-10-05
 
 ### Fixed
