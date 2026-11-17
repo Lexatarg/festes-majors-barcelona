@@ -8,6 +8,12 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ## [Unreleased]
 
+## [1.14.0] — 2026-11-18
+
+### Added
+- New guide: Festa Major de la Sagrera 2026. Its card on the index now opens
+  the guide instead of the Comissió de Festes website.
+
 ## [1.13.3] — 2026-11-16
 
 ### Changed
