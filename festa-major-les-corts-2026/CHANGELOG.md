@@ -7,6 +7,13 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ## [Unreleased]
 
+## [1.2.0] — 2026-11-19
+
+### Added
+- Citymapper in Directions for every place, with map coordinates from
+  Barcelona's open data and the Catalan mapping institute (ICGC). Add to
+  calendar entries now carry the coordinates too.
+
 ## [1.1.1] — 2026-10-05
 
 ### Changed

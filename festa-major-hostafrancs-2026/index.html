@@ -218,30 +218,30 @@
 <div class="ovl" id="ovl"><div class="sheet" id="sheet"></div></div>
 
 <script>
-const VERSION = "1.1.0";
+const VERSION = "1.2.0";
 
 /* Venues. q is the search text for the maps apps; addresses come from the programme.
-   No coordinates yet, so Citymapper is not offered. */
+   lat/lng (from Barcelona's open data and the ICGC geocoder) enable Citymapper. */
 const V = {
-  casinet   : {n:"Centre Cívic Casinet d'Hostafrancs",        q:"Carrer del Rector Triadó 53, Barcelona"},
-  seu       : {n:"Seu del Districte de Sants-Montjuïc",        q:"Carrer de la Creu Coberta 104, Barcelona"},
-  leiva     : {n:"Carrer de Leiva (Àliga – Hostafrancs de Sió)", q:"Carrer de Leiva, Carrer de l'Àliga, Barcelona"},
-  espanya   : {n:"Parc de l'Espanya Industrial",               q:"Parc de l'Espanya Industrial, Barcelona"},
-  creu      : {n:"Carrer de la Creu Coberta",                  q:"Carrer de la Creu Coberta, Barcelona"},
-  pelegri   : {n:"Plaça de Joan Pelegrí",                      q:"Plaça de Joan Pelegrí, Barcelona"},
-  santroc   : {n:"Sant Roc amb Creu Coberta",                  q:"Carrer de Sant Roc, Carrer de la Creu Coberta, Barcelona"},
-  mercat    : {n:"Mercat d'Hostafrancs",                       q:"Mercat d'Hostafrancs, Barcelona"},
-  consell   : {n:"Consell de Cent amb Torre d'en Damians",     q:"Carrer del Consell de Cent, Carrer de la Torre d'en Damians, Barcelona"},
-  temple    : {n:"Temple del Sant Àngel Custodi",              q:"Carrer de Vilardell 50, Barcelona"},
-  basset    : {n:"Espai Basset",                               q:"Carrer de l'Elisi 20, Barcelona"},
-  vilardell : {n:"Carrer de Vilardell",                        q:"Carrer de Vilardell, Barcelona"},
-  fundacio  : {n:"Fundació Cultural Hostafrancs",              q:"Carrer de la Torre d'en Damians 6, Barcelona"},
-  casamig   : {n:"FAB Casa del Mig",                           q:"Casa del Mig, Parc de l'Espanya Industrial, Barcelona"},
-  santcrist : {n:"Carrer del Sant Crist, 13",                  q:"Carrer del Sant Crist 13, Barcelona"},
-  herenni   : {n:"Plaça d'Herenni",                            q:"Plaça d'Herenni, Barcelona"},
-  creutorre : {n:"Creu Coberta amb Torre d'en Damians",        q:"Carrer de la Creu Coberta, Carrer de la Torre d'en Damians, Barcelona"},
-  corrades  : {n:"Plaça de Joan Corrades",                     q:"Plaça de Joan Corrades, Barcelona"},
-  llobet    : {n:"Carrer de Llobet",                           q:"Carrer de Llobet, Barcelona"}
+  casinet   : {n:"Centre Cívic Casinet d'Hostafrancs",        q:"Carrer del Rector Triadó 53, Barcelona", lat:41.377831, lng:2.143206},
+  seu       : {n:"Seu del Districte de Sants-Montjuïc",        q:"Carrer de la Creu Coberta 104, Barcelona", lat:41.375382, lng:2.142254},
+  leiva     : {n:"Carrer de Leiva (Àliga – Hostafrancs de Sió)", q:"Carrer de Leiva, Carrer de l'Àliga, Barcelona", lat:41.374099, lng:2.143746},
+  espanya   : {n:"Parc de l'Espanya Industrial",               q:"Parc de l'Espanya Industrial, Barcelona", lat:41.376536, lng:2.139874},
+  creu      : {n:"Carrer de la Creu Coberta",                  q:"Carrer de la Creu Coberta, Barcelona", lat:41.375041, lng:2.144936},
+  pelegri   : {n:"Plaça de Joan Pelegrí",                      q:"Plaça de Joan Pelegrí, Barcelona", lat:41.376068, lng:2.142610},
+  santroc   : {n:"Sant Roc amb Creu Coberta",                  q:"Carrer de Sant Roc, Carrer de la Creu Coberta, Barcelona", lat:41.375042, lng:2.145130},
+  mercat    : {n:"Mercat d'Hostafrancs",                       q:"Mercat d'Hostafrancs, Barcelona", lat:41.375162, lng:2.143854},
+  consell   : {n:"Consell de Cent amb Torre d'en Damians",     q:"Carrer del Consell de Cent, Carrer de la Torre d'en Damians, Barcelona", lat:41.376103, lng:2.144048},
+  temple    : {n:"Temple del Sant Àngel Custodi",              q:"Carrer de Vilardell 50, Barcelona", lat:41.374500, lng:2.144733},
+  basset    : {n:"Espai Basset",                               q:"Carrer de l'Elisi 20, Barcelona", lat:41.378063, lng:2.143583},
+  vilardell : {n:"Carrer de Vilardell",                        q:"Carrer de Vilardell, Barcelona", lat:41.374545, lng:2.143426},
+  fundacio  : {n:"Fundació Cultural Hostafrancs",              q:"Carrer de la Torre d'en Damians 6, Barcelona", lat:41.375606, lng:2.144618},
+  casamig   : {n:"FAB Casa del Mig",                           q:"Casa del Mig, Parc de l'Espanya Industrial, Barcelona", lat:41.376536, lng:2.139874},
+  santcrist : {n:"Carrer del Sant Crist, 13",                  q:"Carrer del Sant Crist 13, Barcelona", lat:41.374875, lng:2.140314},
+  herenni   : {n:"Plaça d'Herenni",                            q:"Plaça d'Herenni, Barcelona", lat:41.376636, lng:2.143438},
+  creutorre : {n:"Creu Coberta amb Torre d'en Damians",        q:"Carrer de la Creu Coberta, Carrer de la Torre d'en Damians, Barcelona", lat:41.375041, lng:2.144936},
+  corrades  : {n:"Plaça de Joan Corrades",                     q:"Plaça de Joan Corrades, Barcelona", lat:41.372998, lng:2.144501},
+  llobet    : {n:"Carrer de Llobet",                           q:"Carrer de Llobet, Barcelona", lat:41.375614, lng:2.141939}
 };
 
 function toEn(s){

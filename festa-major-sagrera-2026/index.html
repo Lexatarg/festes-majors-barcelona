@@ -218,28 +218,28 @@
 <div class="ovl" id="ovl"><div class="sheet" id="sheet"></div></div>
 
 <script>
-const VERSION = "1.0.0";
+const VERSION = "1.1.0";
 
 /* Venues. q is the search text for the maps apps; addresses come from the programme's list of venues.
-   No coordinates yet, so Citymapper is not offered. */
+   lat/lng (from Barcelona's open data and the ICGC geocoder) enable Citymapper. */
 const V = {
-  elx       : {n:"Plaça dels Jardins d'Elx",                q:"Plaça dels Jardins d'Elx, Barcelona"},
-  masadas   : {n:"Plaça Masadas",                           q:"Plaça Masadas, Barcelona"},
-  envelat   : {n:"Envelat de Festa Major",                  q:"Plaça de l'Assemblea de Catalunya, Barcelona"},
-  assemblea : {n:"Plaça de l'Assemblea de Catalunya",       q:"Plaça de l'Assemblea de Catalunya, Barcelona"},
-  barraca   : {n:"Centre Cívic de la Sagrera «La Barraca»", q:"Carrer de Martí Molins 29, Barcelona"},
-  espai30   : {n:"Espai30-Ateneu Sagrerenc",                q:"Carrer d'Hondures 28, Barcelona"},
-  torre     : {n:"Casal de barri Torre de la Sagrera",      q:"Carrer de Berenguer de Palou 64, Barcelona"},
-  ulises    : {n:"Llibreria Ulises",                        q:"Carrer del Pacífic 34, Barcelona"},
-  garcilaso : {n:"Espai Jove Garcilaso",                    q:"Carrer de Garcilaso 103, Barcelona"},
-  ivanow    : {n:"Nau Ivanow",                              q:"Carrer d'Hondures 28, Barcelona"},
-  bostik    : {n:"Nau Bostik",                              q:"Carrer de Ferran Turné 1, Barcelona"},
-  cristrei  : {n:"Església del Crist Rei",                  q:"Plaça dels Jardins d'Elx, Barcelona"},
-  residencia: {n:"Residència La Sagrera",                   q:"Carrer de Berenguer de Palou 102, Barcelona"},
-  campferro : {n:"Pavelló Poliesportiu Camp del Ferro",     q:"Plaça d'Albert Badia i Mur 1, Barcelona"},
-  pegaso    : {n:"Pati de l'Escola Pegaso",                 q:"Carrer de Torroella de Montgrí, Barcelona"},
-  hispano   : {n:"Plaça Hispano Suïssa",                    q:"Plaça Hispano Suïssa, Barcelona"},
-  meridiana : {n:"Av. Meridiana amb Garcilaso",             q:"Avinguda Meridiana, Carrer de Garcilaso, Barcelona"}
+  elx       : {n:"Plaça dels Jardins d'Elx",                q:"Plaça dels Jardins d'Elx, Barcelona", lat:41.423679, lng:2.188233},
+  masadas   : {n:"Plaça Masadas",                           q:"Plaça Masadas, Barcelona", lat:41.424779, lng:2.189978},
+  envelat   : {n:"Envelat de Festa Major",                  q:"Plaça de l'Assemblea de Catalunya, Barcelona", lat:41.425354, lng:2.188479},
+  assemblea : {n:"Plaça de l'Assemblea de Catalunya",       q:"Plaça de l'Assemblea de Catalunya, Barcelona", lat:41.425354, lng:2.188479},
+  barraca   : {n:"Centre Cívic de la Sagrera «La Barraca»", q:"Carrer de Martí Molins 29, Barcelona", lat:41.423974, lng:2.189151},
+  espai30   : {n:"Espai30-Ateneu Sagrerenc",                q:"Carrer d'Hondures 28, Barcelona", lat:41.419948, lng:2.189955},
+  torre     : {n:"Casal de barri Torre de la Sagrera",      q:"Carrer de Berenguer de Palou 64, Barcelona", lat:41.423707, lng:2.191932},
+  ulises    : {n:"Llibreria Ulises",                        q:"Carrer del Pacífic 34, Barcelona", lat:41.426102, lng:2.188971},
+  garcilaso : {n:"Espai Jove Garcilaso",                    q:"Carrer de Garcilaso 103, Barcelona", lat:41.422605, lng:2.185917},
+  ivanow    : {n:"Nau Ivanow",                              q:"Carrer d'Hondures 28, Barcelona", lat:41.419948, lng:2.189955},
+  bostik    : {n:"Nau Bostik",                              q:"Carrer de Ferran Turné 1, Barcelona", lat:41.424735, lng:2.192928},
+  cristrei  : {n:"Església del Crist Rei",                  q:"Plaça dels Jardins d'Elx, Barcelona", lat:41.423952, lng:2.188222},
+  residencia: {n:"Residència La Sagrera",                   q:"Carrer de Berenguer de Palou 102, Barcelona", lat:41.426245, lng:2.191799},
+  campferro : {n:"Pavelló Poliesportiu Camp del Ferro",     q:"Plaça d'Albert Badia i Mur 1, Barcelona", lat:41.427869, lng:2.193564},
+  pegaso    : {n:"Pati de l'Escola Pegaso",                 q:"Carrer de Torroella de Montgrí, Barcelona", lat:41.428528, lng:2.187306},
+  hispano   : {n:"Plaça Hispano Suïssa",                    q:"Plaça Hispano Suïssa, Barcelona", lat:41.422453, lng:2.189583},
+  meridiana : {n:"Av. Meridiana amb Garcilaso",             q:"Avinguda Meridiana, Carrer de Garcilaso, Barcelona", lat:41.422948, lng:2.185486}
 };
 
 function toEn(s){
